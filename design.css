@@ -30,9 +30,11 @@ landscapeimg-topleft {
 .product-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  position: relative;
   gap: 20px;
-  padding: 20px;
-  padding-top: 0px;
+  padding: 0.01em 16px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 .product-item {
   display: flex;
@@ -115,9 +117,10 @@ img {
 }
 /* Slideshow container */
 .slideshow-container {
-  max-width: 80%;
+  max-width: 700px;
   position: relative;
   margin: auto;
+  padding: 0.01em 16px;
 }
 /* Next & previous buttons */
 .prev,
@@ -178,9 +181,9 @@ img {
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 3s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 3s;
 }
 @-webkit-keyframes fade {
   from {
@@ -217,7 +220,22 @@ img {
     font-size: 14px;
   }
 }
-
+@media (max-width: 768px) {
+  .new-collection {
+    display: none;
+  }
+  .slideshow-container {
+    max-width: 100%;
+    padding-left: 30px;
+    padding-left: 40px;
+  }
+  .w3-row-padding {
+    flex-direction: column; /* Stack elements on top of each other */
+  }
+  .contact-form {
+    margin-top: 20px; /* Add space between store info and form on small screens */
+  }
+}
 /* Footer */
 footer {
   background-color: white;
@@ -226,4 +244,36 @@ footer {
 }
 .footer .w3-col.s4 {
   text-align: center;
+}
+
+.filter-buttons {
+  margin-bottom: 20px;
+}
+
+.filter-button {
+  font-family: "Poppins", sans-serif;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.filter-button.active {
+  background-color: #ccc;
+  transform: scale(1.05); /* Add a slight scaling effect */
+}
+
+.company-introduction {
+  margin: 50px auto; /* Adjust the top margin as needed */
+  padding: 0.01em 16px;
+  max-width: 1300px;
+}
+
+.introduction-container {
+  background-color: #f5f5f5; /* Light gray background */
+  border-radius: 10px; /* Rounded corners */
+  border-width: 2px;
+  padding: 30px;
 }
