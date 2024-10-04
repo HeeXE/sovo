@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="design.css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
 
   <body>
@@ -21,14 +22,15 @@
           onclick="w3_close()"
           class="fa fa-remove w3-hide-large w3-button w3-display-topright"
         ></i>
-        <h3 class="w3-wide"><b>SOVO</b></h3>
+        <h3 class="w3-wide" id="nav_sovo"><b>SOVO</b></h3>
       </div>
       <div
         class="w3-padding-64 w3-large w3-text-grey"
         style="font-weight: bold"
       >
-        <a href="#Product" class="w3-bar-item w3-button"> Products</a>
-        <a href="#Carousel" class="w3-bar-item w3-button"> Merchandise</a>
+        <a href="#Product" class="w3-bar-item w3-button" id="nav_product"> Products</a>
+        <a href="#Carousel" class="w3-bar-item w3-button" id="nav_merch"> Merchandise</a>
+        <a href="#footer" class="w3-bar-item w3-button" id="nav_footer"> Contact Us</a>
       </div>
     </nav>
 
@@ -61,7 +63,7 @@
 
       <!-- Top header -->
       <header class="w3-container w3-xlarge">
-        <h1 class="w3-left" style="margin: 20px;"><b>Catalogue Merchandise</b></h1>
+        <h1 class="w3-left" style="margin: 20px;" id="top"><b>Catalogue Merchandise</b></h1>
       </header>
 
       <!-- Image header -->
@@ -71,24 +73,45 @@
           class="w3-display-left w3-text-white"
           style="padding: 24px 48px"
         >
-          <h1 style="font-family: 'Poppins', sans-serif;"><b>SOVO</b><br>NEW COLLECTION</h1>
-          <p>
+          <h1 style="font-family: 'Poppins', sans-serif;"><b>SOVO</b><br></h1>
+          <h1 class="new-collection" style="font-family: 'Poppins', sans-serif;">NEW COLLECTION</h1>
+          <p class="new-collection">
             <a
               href="#Product"
               class="w3-button w3-black w3-padding-large w3-large"
+              style="border-radius: 10px;"
+              id="browseButton"
               >Browse Our Products</a
             >
           </p>
         </div>
       </div>
 
+      <section class="company-introduction">
+        <div class="introduction-container" style="font-family: 'Poppins', sans-serif;">
+            <h2><b>About Us</b></h2>
+            <p style="margin-bottom: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et 
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+              mollit anim id est laborum.</p>
+        </div>
+    </section>
+
       <!-- Product grid -->
       <div id="Product" class="category-title">
         <h2><b>Our Products</b></h2>
+        <div class="filter-buttons">
+          <button class="filter-button" data-category="all">All</button>
+          <button class="filter-button" data-category="clothes">Clothes</button>
+  
+          <button class="filter-button" data-category="shoes">Shoes</button>
+          <button class="filter-button" data-category="bags">Bags</button>
+      </div>
       <div class="product-container">
-        <div class="product-item">
+        <div class="product-item" data-category="clothes">
           <img
-            src="catalogue_01.png"
+            src="Catalogue Products/catalogue_01.png"
             alt="Product 1"
             class="product-image"
           />
@@ -96,9 +119,9 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="clothes">
           <img
-            src="catalogue_02.png"
+            src="Catalogue Products/catalogue_02.png"
             alt="Product 2"
             class="product-image"
           />
@@ -106,9 +129,9 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="clothes">
           <img
-            src="catalogue_03.png"
+            src="Catalogue Products/catalogue_03.png"
             alt="Product 3"
             class="product-image"
           />
@@ -116,9 +139,9 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="clothes">
           <img
-            src="catalogue_04.png"
+            src="Catalogue Products/catalogue_04.png"
             alt="Product 4"
             class="product-image"
           />
@@ -126,9 +149,9 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="bags">
           <img
-            src="catalogue_05.png"
+            src="Catalogue Products/catalogue_05.png"
             alt="Product 5"
             class="product-image"
           />
@@ -136,9 +159,9 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="clothes">
           <img
-            src="catalogue_06.png"
+            src="Catalogue Products/catalogue_06.png"
             alt="Product 6"
             class="product-image"
           />
@@ -146,19 +169,19 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="clothes">
           <img
-            src="catalogue_07.png"
+            src="Catalogue Products/catalogue_07.png"
             alt="Product 7"
             class="product-image"
           />
-          <div class="product-info">
+          <div class="product-info" data-category="shoes">
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="clothes">
           <img
-            src="catalogue_08.png"
+            src="Catalogue Products/catalogue_08.png"
             alt="Product 8"
             class="product-image"
           />
@@ -166,9 +189,9 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="shoes">
           <img
-            src="catalogue_09.png"
+            src="Catalogue Products/catalogue_09.png"
             alt="Product 9"
             class="product-image"
           />
@@ -176,9 +199,9 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="shoes">
           <img
-            src="catalogue_10.png"
+            src="Catalogue Products/catalogue_10.png"
             alt="Product 10"
             class="product-image"
           />
@@ -186,9 +209,9 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="clothes">
           <img
-            src="catalogue_11.png"
+            src="Catalogue Products/catalogue_11.png"
             alt="Product 11"
             class="product-image"
           />
@@ -196,9 +219,9 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="bags">
           <img
-            src="catalogue_12.png"
+            src="Catalogue Products/catalogue_12.png"
             alt="Product 12"
             class="product-image"
           />
@@ -206,9 +229,9 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="clothes">
           <img
-            src="catalogue_13.png"
+            src="Catalogue Products/catalogue_13.png"
             alt="Product 13"
             class="product-image"
           />
@@ -216,9 +239,9 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="shoes">
           <img
-            src="catalogue_14.png"
+            src="Catalogue Products/catalogue_14.png"
             alt="Product 14"
             class="product-image"
           />
@@ -226,9 +249,9 @@
             <p>Floral Summer Dress<br /><b>RM24.99</b></p>          
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-category="clothes">
           <img
-            src="catalogue_15.png"
+            src="Catalogue Products/catalogue_15.png"
             alt="Product 15"
             class="product-image"
           />
@@ -241,57 +264,57 @@
       <!-- Image Carousel -->
       <div id="Carousel" class="category-title">
         <h2><b>Our Merchandise</b></h2></div>
-      <div class="slideshow-container" style="max-width: 700px;">
+      <div class="slideshow-container">
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_01.png" style="width: 100%" />
           <div class="text">Caption Text</div>
         </div>
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_02.png" style="width: 100%" />
           <div class="text">Caption Two</div>
         </div>
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_03.png" style="width: 100%" />
           <div class="text">Caption Three</div>
         </div>
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_04.png" style="width: 100%" />
           <div class="text">Caption Text</div>
         </div>
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_05.png" style="width: 100%" />
           <div class="text">Caption Text</div>
         </div>
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_06.png" style="width: 100%" />
           <div class="text">Caption Text</div>
         </div>
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_07.png" style="width: 100%" />
           <div class="text">Caption Text</div>
         </div>
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_08.png" style="width: 100%" />
           <div class="text">Caption Text</div>
         </div>
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_09.png" style="width: 100%" />
           <div class="text">Caption Text</div>
         </div>
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_10.png" style="width: 100%" />
           <div class="text">Caption Text</div>
         </div>
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_11.png" style="width: 100%" />
           <div class="text">Caption Text</div>
         </div>
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_12.png" style="width: 100%" />
           <div class="text">Caption Text</div>
         </div>
         <div class="mySlides fade">
-          <img src="catalogue_14.png" style="width: 100%" />
+          <img src="Merchandise/merchandise_13.png" style="width: 100%" />
           <div class="text">Caption Text</div>
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -316,14 +339,16 @@
 
       <!-- Footer -->
       <footer class="footer" id="footer">
-        <div class="w3-row-padding" style="text-align: center;">
-          <div class="w3-col.s4">
+        <div class="w3-row-padding" style="display: flex; justify-content: space-between; align-items: center;">
+          <div class="w3-col s4">
             <h3><b>Store</b></h3>
             <p><i class="fa fa-fw fa-map-marker"></i>Sovo Thrift</p>
             <p><i class="fa fa-fw fa-phone"></i>012-3456789</p>
-            <p><i class="fa fa-fw fa-envelope"></i>example@gmail.com</p><br>
-            <h4><a href="https://linktr.ee/sovothrift?fbclid=PAZXh0bgNhZW0CMTEAAaZEH8bbkXxWn_qUKq9hXl0svpuaWXhY1M9CwAANfpTw9q33l1wg3mPWAds_aem_btrYOHPTcGiip3taWcMbYg" target="_blank"><b>Visit Our Social Media!</b></a></h4>
+           <p><i class="fa fa-fw fa-envelope"></i>example@gmail.com</p><br>
+           <h4><a href="https://linktr.ee/sovothrift?fbclid=PAZXh0bgNhZW0CMTEAAaZEH8bbkXxWn_qUKq9hXl0svpuaWXhY1M9CwAANfpTw9q33l1wg3mPWAds_aem_btrYOHPTcGiip3taWcMbYg" 
+            target="_blank"><b>Contact Us!</b></a></h4>
           </div>
+        </div>
       </footer>
 
       <div class="w3-black w3-center w3-padding-24">
