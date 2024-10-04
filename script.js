@@ -63,3 +63,67 @@ function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
   document.getElementById("myOverlay").style.display = "none";
 }
+
+const filterButtons = document.querySelectorAll(".filter-button");
+const productItems = document.querySelectorAll(".product-item");
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.getAttribute("data-category");
+    filterProducts(category);
+  });
+});
+
+function filterProducts(category) {
+  productItems.forEach((item) => {
+    const productCategory = item.getAttribute("data-category");
+    if (category === "all" || productCategory === category) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+
+  // Update the active button class
+  filterButtons.forEach((button) => {
+    button.classList.remove("active");
+  });
+  document
+    .querySelector(`.filter-button[data-category="${category}"]`)
+    .classList.add("active");
+}
+
+// Initial filtering (show all products)
+filterProducts("all");
+
+// Scroll Animation to Products
+const elementIds = ["browseButton", "nav_product", "nav_merch"];
+
+elementIds.forEach((id) => {
+  document.getElementById(id).addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("Product").scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+// Scroll Animation to Merchandise
+document
+  .getElementById("nav_merch")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("Carousel").scrollIntoView({ behavior: "smooth" });
+  });
+
+// Scroll Animation to Footer
+document
+  .getElementById("nav_footer")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("footer").scrollIntoView({ behavior: "smooth" });
+  });
+
+// Scroll Animation to Footer
+document.getElementById("nav_sovo").addEventListener("click", function (event) {
+  event.preventDefault();
+  document.getElementById("top").scrollIntoView({ behavior: "smooth" });
+});
